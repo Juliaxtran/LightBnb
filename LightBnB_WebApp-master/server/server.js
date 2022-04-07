@@ -23,6 +23,8 @@ const apiRouter = express.Router();
 apiRoutes(apiRouter, database);
 app.use('/api', apiRouter);
 
+// modularizing our routes
+
 // /user/endpoints
 const userRouter = express.Router();
 userRoutes(userRouter, database);
@@ -34,5 +36,5 @@ app.get("/test", (req, res) => {
   res.send("🤗");
 });
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 8080;
 app.listen(port, (err) => console.log(err || `listening on port ${port} 😎`));
